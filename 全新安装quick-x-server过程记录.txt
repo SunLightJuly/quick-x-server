@@ -1,0 +1,22 @@
+CentOS release 5.8
+
+OPENRESTY_VER=1.4.3.6
+ 
+wget http://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz
+
+you need to have ldconfig in your PATH env when enabling luajit
+----用管理员帐号
+
+./configure: error: the HTTP rewrite module requires the PCRE library
+
+安装pcre-devel与openssl-devel解决问题
+ 
+yum -y install pcre-devel openssl openssl-devel
+
+runtime error: /opt/quick_server/src/server/lib/init.lua:13: module 'framework.json' not found
+
+使用客户端的json.lua
+
+runtime error: ...ver/src/server/lib/beanstalkd/RestyBeanstalkdAdapter.lua:2: module 'resty.beanstalkd' not found
+
+将beanstalkd.lua复制到/opt/quick_server/openresty/lualib/resty/下
