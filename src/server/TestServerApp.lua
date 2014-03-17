@@ -38,7 +38,7 @@ end
 ---- events callback
 
 function TestServerApp:onWebSocketsReady(event)
-    --self:subscribePushMessageChannel()
+    self:subscribePushMessageChannel()
 end
 
 function TestServerApp:onWebSocketsClose(event)
