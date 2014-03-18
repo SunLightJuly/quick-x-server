@@ -97,7 +97,13 @@ end
 
 function WebSocketsServerBase:processWebSocketsMessage(rawMessage, messageType)
     if messageType ~= "text" then
-        return false, string.format("not supported message type %s", messageType)
+        -- return false, string.format("not supported message type %s", messageType)
+        local res = ngx.location.capture("/")
+        local bytes, err = self.websockets:send_binary(res.body)
+        if not bytes then
+            return false, err
+        end
+        return true
     end
 
     local ok, message = self:parseWebSocketsMessage(rawMessage)
