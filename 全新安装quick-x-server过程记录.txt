@@ -20,3 +20,5 @@ runtime error: /opt/quick_server/src/server/lib/init.lua:13: module 'framework.j
 runtime error: ...ver/src/server/lib/beanstalkd/RestyBeanstalkdAdapter.lua:2: module 'resty.beanstalkd' not found
 
 将beanstalkd.lua复制到/opt/quick_server/openresty/lualib/resty/下
+
+需要运行/opt/quick_server/redis/bin/redis-server /opt/quick_server/conf/redis.conf
